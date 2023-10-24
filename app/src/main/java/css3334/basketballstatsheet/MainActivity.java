@@ -16,14 +16,15 @@ public class MainActivity extends AppCompatActivity {
 
     private PlayerNumber[] players;
     private PlayerNumber playerNumber;
-    TextView textViewPlayerInfo;
+    TextView textViewPlayer, textViewPoints, textViewAssists, textViewRebounds, textViewBlocks, textViewSteals, textViewTurnovers, textViewFouls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewPlayerInfo = findViewById(R.id.textViewPlayerInfo);
+        textViewPlayer = findViewById(R.id.textViewPlayer);
+        textViewPoints = findViewById(R.id.textViewPoints);
         editTextPlayerNumber = findViewById(R.id.editTextPlayerNumber);
 
         //Initialize Player Array
@@ -36,22 +37,23 @@ public class MainActivity extends AppCompatActivity {
         //Initialize playerNumber
         playerNumber = players[0];
 
-        //Add 1 Point
+        // Add 1 Point
         buttonScore1 = findViewById(R.id.buttonScore1);
         buttonScore1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int enteredPlayerNumber = Integer.parseInt(editTextPlayerNumber.getText().toString());
-                Log.d("BBB", "in on click"+enteredPlayerNumber);
-                if (enteredPlayerNumber >= 1) {
-                    Log.d("BBB", "inside on click player num = "+enteredPlayerNumber);
-                    PlayerNumber player = new PlayerNumber(editTextPlayerNumber.getText().toString());
-                    player.addPoints(1);
+                Log.d("BBB", "in on click" + enteredPlayerNumber);
+                if (enteredPlayerNumber >= 1 && enteredPlayerNumber <= players.length) {
+                    Log.d("BBB", "inside on click player num = " + enteredPlayerNumber);
+                    players[enteredPlayerNumber - 1].addPoints(1);
                     playerNumber = players[enteredPlayerNumber - 1];
                     updatePlayerInfo(enteredPlayerNumber - 1);
                 }
+                text
             }
         });
+
 
         //Add 2 Points
         buttonScore2 = findViewById(R.id.buttonScore2);
