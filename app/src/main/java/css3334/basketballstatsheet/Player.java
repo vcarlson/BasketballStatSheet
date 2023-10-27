@@ -1,7 +1,7 @@
 package css3334.basketballstatsheet;
 
-public class PlayerNumber {
-    private String playerNumber;
+public class Player {
+    private int playerNumber;
     private int points;
     private int rebounds;
     private int assists;
@@ -9,8 +9,8 @@ public class PlayerNumber {
     private int steals;
     private int turnovers;
 
-    public PlayerNumber(String playerNumber) {
-        this.playerNumber = playerNumber;
+    public Player() {
+        this.playerNumber = 0;
         this.points = 0;
         this.assists = 0;
         this.rebounds = 0;
@@ -19,31 +19,31 @@ public class PlayerNumber {
         this.turnovers = 0;
     }
 
-    public String getPlayerNumber() {
+    public int getPlayerNumber() {
         return playerNumber;
     }
 
-    public int getPoints() {
+    public Integer getPoints() {
         return points;
     }
 
-    public int getAssists() {
+    public Integer getAssists() {
         return assists;
     }
 
-    public int getRebounds() {
+    public Integer getRebounds() {
         return rebounds;
     }
 
-    public int getBlocks() {
+    public Integer getBlocks() {
         return blocks;
     }
 
-    public int getSteals() {
+    public Integer getSteals() {
         return steals;
     }
 
-    public int getTurnovers() {
+    public Integer getTurnovers() {
         return turnovers;
     }
 
